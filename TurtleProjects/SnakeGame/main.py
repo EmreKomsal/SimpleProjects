@@ -29,9 +29,8 @@ while game_is_on:
         
 
     if snake.check_screen_collision() or snake.check_collision():
-        snake.reset()
-        scoreboard.reset()
-        scoreboard.game_over()
+        game_is_on = False
+        break
     
     scoreboard.update_scoreboard()
     
@@ -43,7 +42,8 @@ while game_is_on:
     screen.onkey(snake.left, "a")
     screen.onkey(snake.right, "d")
     
-    
+
+scoreboard.game_over()
     
 screen.exitonclick()
 

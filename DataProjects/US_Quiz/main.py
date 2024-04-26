@@ -1,6 +1,5 @@
 import turtle
 import pandas as pd
-from scoreboard import Scoreboard
 
 # Set up the screen
 def setup_screen():
@@ -41,21 +40,17 @@ def main():
     user_input = ""
     data = read_data()
     user_states = []
-    scoreboard = Scoreboard()
     while user_input != "Exit":
         user_input = ask_state(screen, user_score)
         if user_input == "Exit":
-            scoreboard.game_over()
             break
         if user_input in user_states:
             continue
         state = check_state(data, user_input)
         if not state.empty:
             user_score += 1
-            scoreboard.increase_score()
             user_states.append(state.state.values[0])
             write_state_screen(state)
-            scoreboard.update_scoreboard()
     turtle.mainloop()
     
 if __name__ == "__main__":

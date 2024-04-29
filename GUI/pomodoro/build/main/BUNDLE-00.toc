@@ -1,0 +1,3 @@
+([('main',
+   '/Users/ekomsal/Projects/PythonProjects/SimpleProjects/GUI/pomodoro/dist/main',
+   'EXECUTABLE')],)
